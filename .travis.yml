@@ -13,7 +13,8 @@ services:
   - postgresql
 
 before_script:
-  - ../medium-transactional-typeorm/scripts/before_script.sh
+  - chmod +x ./scripts/before_script.sh
+  - ./scripts/before_script.sh
 
 script:
   - yarn lint
@@ -21,4 +22,5 @@ script:
   - yarn test:coverage
   
 after_script:
-  - ../medium-transactional-typeorm/scripts/after_script.sh
+  - chmod +x ./scripts/after_script.sh
+  - ./scripts/after_script.sh
