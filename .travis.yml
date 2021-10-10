@@ -17,8 +17,10 @@ before_script:
   - chmod +x ./cc-test-reporter
   - ./cc-test-reporter before-build
   - cp .env.example .env
-  - psql -c 'create database users;' -U postgres
-  - psql -c 'create database cats;' -U postgres
+  - psql -c 'CREATE USER root WITH ENCRYPTED PASSWORD 'password';' -U postgres
+  - psql -c 'ALTER USER root WITH SUPERUSER;' -U postgres
+  - psql -c 'CREATE DATABASE "users";' -U postgres
+  - psql -c 'CREATE DATABASE "cats";' -U postgres
 
 script:
   - yarn lint
