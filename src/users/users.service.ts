@@ -6,7 +6,7 @@ import {getManager} from 'typeorm';
 
 @Injectable()
 export class UsersService {
-  public async createUserIfNotExists(user: User): Promise<User> {
+  public async createUserIfNotExists(user: Partial<User>): Promise<User> {
     return await getManager(DbConnection.Users).transaction(async (manager) => {
       const isUserExist = await manager.findOne(User, user.id);
       if (isUserExist) {

@@ -690,13 +690,13 @@
     lodash "4.17.21"
     path-to-regexp "3.2.0"
 
-"@nestjs/testing@8.0.4":
-  version "8.0.4"
-  resolved "https://registry.yarnpkg.com/@nestjs/testing/-/testing-8.0.4.tgz#2b7d4fa87df23d2e3307350ae41699a37bac8ad9"
-  integrity sha512-uc5dQJSOWoSJ9pWLjE9i5LgKbWuvp8Nqaq54iosRRuF4t13B0BmK2QrBaEWNTH96919R3bS3JURBHZIu5rBBwg==
+"@nestjs/testing@^8.0.11":
+  version "8.0.11"
+  resolved "https://registry.yarnpkg.com/@nestjs/testing/-/testing-8.0.11.tgz#d41fc20a149dd919c9dfacb668f1c9cbc131f57c"
+  integrity sha512-BYQFsCktbrT/kFNl2uNoUgmNshKxPJLJG2/J+os/+stfX7yeV573I1uo1m4DEPod71cRxVFvxc3Ehc72rOyPmw==
   dependencies:
     optional "0.1.4"
-    tslib "2.3.0"
+    tslib "2.3.1"
 
 "@nestjs/typeorm@8.0.1":
   version "8.0.1"
@@ -6076,15 +6076,15 @@ tslib@2.3.0:
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.3.0.tgz#803b8cdab3e12ba581a4ca41c8839bbb0dacb09e"
   integrity sha512-N82ooyxVNm6h1riLCoyS9e3fuJ3AMG2zIZs2Gd1ATcSFjSA23Q0fzjjZeh0jbJvWVDZ0cJT8yaNNaaXHzueNjg==
 
+tslib@2.3.1, tslib@^2.1.0:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.3.1.tgz#e8a335add5ceae51aa261d32a490158ef042ef01"
+  integrity sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==
+
 tslib@^1.8.1, tslib@^1.9.0:
   version "1.14.1"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
-
-tslib@^2.1.0:
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.3.1.tgz#e8a335add5ceae51aa261d32a490158ef042ef01"
-  integrity sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw==
 
 tslib@~2.1.0:
   version "2.1.0"
