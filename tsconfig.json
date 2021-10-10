@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "module": "commonjs",
+    "moduleResolution": "Node",
+    "declaration": false,
+    "skipLibCheck": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "ES2018",
+    "lib": ["ESNext"],
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "resolveJsonModule": true,
+    "incremental": true,
+    "esModuleInterop": true
+  },
+  "include": ["src/**/*", "database/**/*"]
+}
