@@ -1,6 +1,8 @@
 import {get} from 'env-var';
 
 export class DbConfig {
+  public static readonly POSTGRES_LOGGER_FILE_ENABLED: boolean = get('POSTGRES_LOGGER_FILE_ENABLED').required().asBool();
+
   public static readonly POSTGRES_HOST_USERS: string = get('POSTGRES_HOST_USERS').required().asString();
   public static readonly POSTGRES_DB_USERS: string = get('POSTGRES_DB_USERS').required().asString();
   public static readonly POSTGRES_USER_USERS: string = get('POSTGRES_USER_USERS').required().asString();

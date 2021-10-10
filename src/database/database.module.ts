@@ -18,6 +18,8 @@ export const dbConfigUsers: TypeOrmModuleOptions = {
   entities: [`${__dirname}/../**/${DbConnection.Users}/*.{ts,js}`],
   migrations: [`${__dirname}/../../database/migrations/${DbConnection.Users}/*.{ts,js}`],
   cli: {migrationsDir: `../database/migrations/${DbConnection.Users}`},
+  logging: DbConfig.POSTGRES_LOGGER_FILE_ENABLED,
+  logger: 'file',
 };
 
 export const dbConfigCats: TypeOrmModuleOptions = {
@@ -31,6 +33,8 @@ export const dbConfigCats: TypeOrmModuleOptions = {
   entities: [`${__dirname}/../**/${DbConnection.Cats}/*.{ts,js}`],
   migrations: [`${__dirname}/../../database/migrations/${DbConnection.Cats}/*.{ts,js}`],
   cli: {migrationsDir: `../database/migrations/${DbConnection.Cats}`},
+  logging: DbConfig.POSTGRES_LOGGER_FILE_ENABLED,
+  logger: 'file',
 };
 
 @Module({

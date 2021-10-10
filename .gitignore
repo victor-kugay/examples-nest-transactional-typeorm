@@ -6,6 +6,7 @@
 /.awcache
 /.vscode
 /.env
+/*.log
 
 # misc
 npm-debug.log
