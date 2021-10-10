@@ -12,6 +12,8 @@
   </a>
 </p>
 
+[![Build Status](https://app.travis-ci.com/ViktorKugay/medium-transactional-typeorm.svg?branch=main)](https://app.travis-ci.com/ViktorKugay/medium-transactional-typeorm)
+
 ## Table Of Contents
 
 - [Description](#Description)
