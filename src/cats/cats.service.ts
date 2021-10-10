@@ -18,6 +18,8 @@ export class CatsService {
     @InjectEntityManager(DbConnection.Users) private readonly usersManager: EntityManager,
   ) {}
 
+  // === Examples: createQueryRunner ===
+
   public async createCatAndUpdateUserCredits(cat: Cat): Promise<Cat> {
     const queryRunnerUsers = this.usersConnection.createQueryRunner();
     const queryRunnerCats = this.catsConnection.createQueryRunner();
@@ -52,6 +54,8 @@ export class CatsService {
       await queryRunnerUsers.release();
     }
   }
+
+  // === Examples: InjectEntityManager ===
 
   public async deleteCatAndUpdateUserCredits(userId: string, catId: string): Promise<Cat> {
     const user = await this.usersManager.findOne(User, userId);

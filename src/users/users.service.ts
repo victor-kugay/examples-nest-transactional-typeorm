@@ -9,6 +9,8 @@ import {InjectRepository} from '@nestjs/typeorm';
 export class UsersService {
   constructor(@InjectRepository(User, DbConnection.Users) private readonly usersRepo: Repository<User>) {}
 
+  // === Examples: InjectRepository ===
+
   public async deleteUserIfExists(userId: string, transaction: boolean = true): Promise<User> {
     const user = await this.usersRepo.findOne(userId, {transaction});
     if (!user) {
@@ -19,6 +21,8 @@ export class UsersService {
 
     return user;
   }
+
+  // === Examples: getManager ===
 
   public async createUserIfNotExists(user: Partial<User>): Promise<User> {
     return await getManager(DbConnection.Users).transaction(async (manager) => {
