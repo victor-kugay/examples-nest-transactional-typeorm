@@ -3,6 +3,7 @@ import {User} from '../entities/users/user.entity';
 import {Test, TestingModule} from '@nestjs/testing';
 import {UsersService} from '../users.service';
 import {ModuleMetadata} from '@nestjs/common';
+import {UsersModule} from '../users.module';
 import {getConnection} from 'typeorm';
 
 let usersService: UsersService;
@@ -10,8 +11,7 @@ let usersService: UsersService;
 let moduleRef: TestingModule;
 
 const moduleConfig: ModuleMetadata = {
-  imports: [DatabaseModule],
-  providers: [UsersService],
+  imports: [DatabaseModule, UsersModule],
 };
 
 beforeAll(async () => {
