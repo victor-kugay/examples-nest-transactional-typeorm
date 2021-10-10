@@ -1,6 +1,6 @@
 import {Cat} from '../entities/cats/cat.entity';
 import {ApiProperty} from '@nestjs/swagger';
-import { ErrorName } from '../../common/errors';
+import {ErrorName} from '../../common/errors';
 
 export class CreateCatResponse {
   @ApiProperty({example: 'ok'})
