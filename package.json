@@ -13,7 +13,7 @@
     "nest": "node -r dotenv/config node_modules/.bin/nest",
     "format": "prettier --write src/**/*.ts src/*.ts database/**/*.ts",
     "lint": "eslint 'src/**/*.ts' --fix",
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "test:watch": "jest --watch",
     "db:reload": "yarn db:drop && yarn db:migrate",
     "db:generate:users": "yarn typeorm migration:generate -n newMigration -p -c users",

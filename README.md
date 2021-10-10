@@ -13,6 +13,8 @@
 </p>
 
 [![Build Status](https://app.travis-ci.com/ViktorKugay/medium-transactional-typeorm.svg?branch=main)](https://app.travis-ci.com/ViktorKugay/medium-transactional-typeorm)
+[![Maintainability](https://api.codeclimate.com/v1/badges/8c8184fda716aca2e7d6/maintainability)](https://codeclimate.com/github/ViktorKugay/medium-transactional-typeorm/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/8c8184fda716aca2e7d6/test_coverage)](https://codeclimate.com/github/ViktorKugay/medium-transactional-typeorm/test_coverage)
 
 ## Table Of Contents
 
