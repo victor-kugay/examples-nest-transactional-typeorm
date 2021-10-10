@@ -155,6 +155,45 @@ COMMIT
 COMMIT
 ```
 
+#### Delete users' cat
+
+```bash
+$ curl localhost:3000/api/v1/cats \
+$ -H 'Content-Type: application/json' \
+$ -d '{"catId": "1", "userId": "1"}' \
+$ -X DELETE
+```
+
+```sql
+SELECT 
+  "User"."id" AS "User_id", 
+  "User"."credits" AS "User_credits", 
+  "User"."createdAt" AS "User_createdAt", 
+  "User"."updatedAt" AS "User_updatedAt" 
+FROM 
+  "users" "User" 
+WHERE 
+  "User"."id" IN ($1) -- PARAMETERS: ["1"]
+SELECT 
+  "Cat"."id" AS "Cat_id", 
+  "Cat"."userId" AS "Cat_userId", 
+  "Cat"."createdAt" AS "Cat_createdAt", 
+  "Cat"."updatedAt" AS "Cat_updatedAt" 
+FROM 
+  "cats" "Cat" 
+WHERE 
+  "Cat"."id" IN ($1) -- PARAMETERS: ["1"]
+DELETE FROM 
+  "cats" 
+WHERE 
+  (
+    "id" = $1 
+    AND "userId" = $2 
+    AND "createdAt" = $3 
+    AND "updatedAt" = $4
+  ) -- PARAMETERS: ["1","1","2021-10-10T07:52:51.272Z","2021-10-10T07:52:51.272Z"]
+```
+
 ## Stay in touch
 
 - Medium - [@viktorkugay](https://medium.com/@viktorkugay)

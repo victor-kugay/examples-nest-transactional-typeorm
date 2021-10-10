@@ -1,11 +1,11 @@
 import {DbConnection} from '../database/database.module';
 import {User} from '../users/entities/users/user.entity';
-import {UserHasNotEnoughCredits} from '../common/errors';
+import {CatDoesntExist, UserDoesntExist, UserHasNotEnoughCredits} from '../common/errors';
+import {InjectConnection, InjectEntityManager} from '@nestjs/typeorm';
+import {Connection, EntityManager} from 'typeorm';
 import {AppConfig} from '../configs/app-config';
-import {InjectConnection} from '@nestjs/typeorm';
 import {Cat} from './entities/cats/cat.entity';
 import {Injectable} from '@nestjs/common';
-import {Connection} from 'typeorm';
 
 const {APP_DAY_PRICE_IN_CREDITS} = AppConfig;
 
@@ -14,6 +14,8 @@ export class CatsService {
   constructor(
     @InjectConnection(DbConnection.Cats) private readonly catsConnection: Connection,
     @InjectConnection(DbConnection.Users) private readonly usersConnection: Connection,
+    @InjectEntityManager(DbConnection.Cats) private readonly catsManager: EntityManager,
+    @InjectEntityManager(DbConnection.Users) private readonly usersManager: EntityManager,
   ) {}
 
   public async createCatAndUpdateUserCredits(cat: Cat): Promise<Cat> {
@@ -49,5 +51,21 @@ export class CatsService {
       await queryRunnerCats.release();
       await queryRunnerUsers.release();
     }
+  }
+
+  public async deleteCatAndUpdateUserCredits(userId: string, catId: string): Promise<Cat> {
+    const userEntity = await this.usersManager.findOne(User, userId);
+    if (!userEntity) {
+      throw new UserDoesntExist();
+    }
+
+    const catEntity = await this.catsManager.findOne(Cat, catId);
+    if (!catEntity) {
+      throw new CatDoesntExist();
+    }
+
+    await this.catsManager.delete(Cat, catEntity);
+
+    return catEntity;
   }
 }
