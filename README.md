@@ -1,17 +1,5 @@
 # Transactional TypeORM
 
-<p align="center">
-  <a href="http://nestjs.com/" target="blank">
-    <img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" />
-   </a>
-  <a href="https://www.postgresql.org/">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg" width="120">
-  </a>
-   <a href="http://typeorm.io/">
-    <img src="https://github.com/typeorm/typeorm/raw/master/resources/logo_big.png" width="250">
-  </a>
-</p>
-
 [![Build Status](https://app.travis-ci.com/ViktorKugay/medium-transactional-typeorm.svg?branch=main)](https://app.travis-ci.com/ViktorKugay/medium-transactional-typeorm)
 [![Maintainability](https://api.codeclimate.com/v1/badges/8c8184fda716aca2e7d6/maintainability)](https://codeclimate.com/github/ViktorKugay/medium-transactional-typeorm/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/8c8184fda716aca2e7d6/test_coverage)](https://codeclimate.com/github/ViktorKugay/medium-transactional-typeorm/test_coverage)
