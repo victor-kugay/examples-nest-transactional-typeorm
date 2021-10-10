@@ -194,6 +194,46 @@ WHERE
   ) -- PARAMETERS: ["1","1","2021-10-10T07:52:51.272Z","2021-10-10T07:52:51.272Z"]
 ```
 
+#### Delete user
+
+```bash
+$ curl localhost:3000/api/v1/users \
+$ -H 'Content-Type: application/json' \
+$ -d '{"userId": "1"}' \
+$ -X DELETE
+```
+
+```sql
+START TRANSACTION 
+SELECT 
+  "User"."id" AS "User_id", 
+  "User"."credits" AS "User_credits", 
+  "User"."createdAt" AS "User_createdAt", 
+  "User"."updatedAt" AS "User_updatedAt" 
+FROM 
+  "users" "User" 
+WHERE 
+  "User"."id" IN ($1) -- PARAMETERS: ["1"]
+COMMIT 
+
+SELECT 
+  "User"."id" AS "User_id", 
+  "User"."credits" AS "User_credits", 
+  "User"."createdAt" AS "User_createdAt", 
+  "User"."updatedAt" AS "User_updatedAt" 
+FROM 
+  "users" "User" 
+WHERE 
+  "User"."id" IN ($1) -- PARAMETERS: ["1"]
+
+START TRANSACTION 
+DELETE FROM 
+  "users" 
+WHERE 
+  "id" = $1 -- PARAMETERS: ["1"]
+COMMIT
+```
+
 ## Stay in touch
 
 - Medium - [@viktorkugay](https://medium.com/@viktorkugay)
