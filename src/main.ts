@@ -21,7 +21,7 @@ async function startApp(port: number) {
     // @See https://github.com/iamolegga/nestjs-pino/blob/master/README.md#example
     bufferLogs: true,
   });
-  
+
   const logger = app.get(Logger);
 
   app.useGlobalFilters(new ErrorFilter(logger));
