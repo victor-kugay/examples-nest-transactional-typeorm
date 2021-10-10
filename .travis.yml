@@ -9,15 +9,18 @@ language: node_js
 node_js:
   - node
 
+services:
+  - postgresql
+
 before_script:
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
+  - chmod +x ./scripts/before_script.sh
+  - ./scripts/before_script.sh
 
 script:
-  - npm run lint
-  - npm run build
-  - npm run test
+  - yarn lint
+  - yarn typecheck
+  - yarn test:coverage
   
 after_script:
-  - ./cc-test-reporter after-build
+  - chmod +x ./scripts/after_script.sh
+  - ./scripts/after_script.sh
